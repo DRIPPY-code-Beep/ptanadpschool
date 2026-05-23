@@ -51,6 +51,14 @@ window.addEventListener('DOMContentLoaded', function () {
     mobileToggle.addEventListener('click', toggleMobileNav);
   }
 
+  const mobileLinks = document.querySelectorAll('#mobileNavPanel a[href$=".html"]');
+  mobileLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      showLoading();
+      closeMobileNav();
+    });
+  });
+
   document.addEventListener('click', function (event) {
     if (!panel || panel.classList.contains('hidden')) return;
     const target = event.target;
