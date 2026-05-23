@@ -16,8 +16,11 @@
           <img src="14.png" alt="PTA-NADP Logo" class="h-12 w-auto" />
         </div>
         <h1 class="text-2xl font-bold tracking-wide">PTA-NADP International College</h1>
-        <nav>
-          <ul class="hidden md:flex gap-8 text-lg items-center">
+        <nav class="relative">
+            <button id="mobileNavToggle" aria-label="Open navigation" class="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2 text-white transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+            <ul class="hidden md:flex gap-8 text-lg items-center">
             <li><a href="#home" class="hover:text-yellow-300 transition">Home</a></li>
             <li><a href="#about" class="hover:text-yellow-300 transition">About</a></li>
             <li><a href="#teachers" class="hover:text-yellow-300 transition">Teachers</a></li>
@@ -33,6 +36,18 @@
               </button>
             </li>
           </ul>
+            <div id="mobileNavPanel" class="md:hidden hidden absolute right-0 top-full mt-3 w-screen max-w-xs rounded-3xl bg-white/95 p-5 shadow-2xl backdrop-blur-xl dark:bg-slate-900/95">
+              <ul class="space-y-3 text-left">
+                <li><a href="index.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">Home</a></li>
+                <li><a href="about.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">About</a></li>
+                <li><a href="teachers.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">Teachers</a></li>
+                <li><a href="students.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">Students</a></li>
+                <li><a href="classes.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">Classes</a></li>
+                <li><a href="gallery.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">Gallery</a></li>
+                <li><a href="news.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">News</a></li>
+                <li><a href="contact.html" onclick="showLoading(); toggleMobileNav();" class="block rounded-2xl px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800">Contact</a></li>
+              </ul>
+            </div>
         </nav>
       </div>
     </header>
@@ -228,6 +243,47 @@
           const isDark = !document.documentElement.classList.contains('dark');
           setDark(isDark);
           localStorage.setItem('ptnadp-dark', isDark ? '1' : '0');
+        });
+      })();
+    </script>
+      <script>
+      function showLoading() { document.getElementById('loadingOverlay').classList.add('show'); }
+      function toggleMobileNav() {
+        const panel = document.getElementById('mobileNavPanel');
+        if (!panel) return;
+        panel.classList.toggle('hidden');
+      }
+      window.addEventListener('pageshow', () => { document.getElementById('loadingOverlay').classList.remove('show'); });
+      (function(){
+        const toggle = document.getElementById('darkToggle');
+        const mobileToggle = document.getElementById('mobileNavToggle');
+        const panel = document.getElementById('mobileNavPanel');
+        const iconSun = document.getElementById('iconSun');
+        const iconMoon = document.getElementById('iconMoon');
+        const prefer = localStorage.getItem('ptnadp-dark');
+        const setDark = (d) => {
+          document.documentElement.classList.toggle('dark', d);
+          if(d){
+            document.body.classList.remove('bg-gray-100');
+            document.body.classList.add('bg-gray-900','text-white');
+            iconSun.classList.remove('hidden'); iconMoon.classList.add('hidden');
+          } else {
+            document.body.classList.remove('bg-gray-900','text-white');
+            document.body.classList.add('bg-gray-100','text-gray-800');
+            iconSun.classList.add('hidden'); iconMoon.classList.remove('hidden');
+          }
+        }
+        setDark(prefer === '1');
+        if(toggle) toggle.addEventListener('click', () => {
+          const isDark = !document.documentElement.classList.contains('dark');
+          setDark(isDark);
+          localStorage.setItem('ptnadp-dark', isDark ? '1' : '0');
+        });
+        if(mobileToggle) mobileToggle.addEventListener('click', toggleMobileNav);
+        document.addEventListener('click', (event) => {
+          if (panel && !panel.classList.contains('hidden') && !panel.contains(event.target) && !event.target.closest('#mobileNavToggle')) {
+            panel.classList.add('hidden');
+          }
         });
       })();
     </script>
