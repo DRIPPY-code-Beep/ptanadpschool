@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Teachers - PTA-NADP International College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+  <body class="min-h-screen font-sans transition-colors duration-300">
+    <div id="loadingOverlay"><div class="spinner"></div></div>
+    <header class="site-header text-white shadow sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">PTA-NADP International College</h1>
+        <nav>
+          <ul class="hidden md:flex gap-8 text-lg items-center">
+            <li><a href="index.html" onclick="showLoading()" class="hover:opacity-80 transition">Home</a></li>
+            <li><a href="about.html" onclick="showLoading()" class="hover:opacity-80 transition">About</a></li>
+            <li><a href="teachers.html" onclick="showLoading()" class="hover:opacity-80 transition font-semibold">Teachers</a></li>
+            <li><a href="students.html" onclick="showLoading()" class="hover:opacity-80 transition">Students</a></li>
+            <li><a href="classes.html" onclick="showLoading()" class="hover:opacity-80 transition">Classes</a></li>
+            <li><a href="gallery.html" onclick="showLoading()" class="hover:opacity-80 transition">Gallery</a></li>
+            <li><a href="news.html" onclick="showLoading()" class="hover:opacity-80 transition">News</a></li>
+            <li><a href="contact.html" onclick="showLoading()" class="hover:opacity-80 transition">Contact</a></li>
+            <li>
+              <button id="darkToggle" aria-label="Toggle dark mode" class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition">
+                <svg id="iconSun" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l1.414-1.414M7.05 7.05L5.636 5.636"/></svg>
+                <svg id="iconMoon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-16 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="section-title text-3xl font-bold mb-3">Our Teachers</h2>
+          <p class="mb-8 text-lg">Meet our experienced and passionate educators.</p>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="13.jpg" alt="Principal" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Dr. Eunice Iyakino</h4>
+                <p class="section-title">Principal</p>
+                <p class="text-gray-600 mt-3">Our principal leads with vision and dedication, overseeing academic excellence and student welfare across all departments.</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="15.jpg" alt="Chairman" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Bishop (Dr.) J. P. AKA</h4>
+                <p class="section-title">Chairman</p>
+                <p class="text-gray-600 mt-3">Chairman of the governing council, providing strategic guidance and community leadership for the college.</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="18.webp" alt="Mrs. Clara Johnson" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Mrs. Clara Johnson</h4>
+                <p class="section-title">Mathematics Teacher</p>
+                <p class="text-gray-600 mt-3">Expert in advanced mathematics with 15+ years of teaching experience. Specializes in making complex concepts accessible to all students.</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="16.jpg" alt="Mr. Daniel Smith" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Mr. Daniel Smith</h4>
+                <p class="text-blue-700">Physics Teacher</p>
+                <p class="text-gray-600 mt-3">Innovative physics educator with a passion for laboratory experiments and practical learning. Encourages scientific thinking in every lesson.</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="17.webp" alt="Mrs. Grace Williams" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Mrs. Grace Williams</h4>
+                <p class="text-blue-700">English Language Teacher</p>
+                <p class="text-gray-600 mt-3">Dedicated to fostering a love of literature and communication. Known for engaging classroom discussions and inspiring student creativity.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer text-white py-8 mt-12">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h4 class="text-xl font-bold mb-2">PTA-NADP International College</h4>
+        <p class="text-gray-200 mb-2">Building future leaders through education and innovation.</p>
+        <p class="text-sm text-gray-300">© 2026 PTA-NADP International College. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function showLoading() { document.getElementById('loadingOverlay').classList.add('show'); }
+      window.addEventListener('pageshow', () => { document.getElementById('loadingOverlay').classList.remove('show'); });
+      (function(){
+        const toggle = document.getElementById('darkToggle');
+        const iconSun = document.getElementById('iconSun');
+        const iconMoon = document.getElementById('iconMoon');
+        const prefer = localStorage.getItem('ptnadp-dark');
+        const setDark = (d) => {
+          document.documentElement.classList.toggle('dark', d);
+          if(d){
+            document.body.classList.remove('bg-gray-100');
+            document.body.classList.add('bg-gray-900','text-white');
+            iconSun.classList.remove('hidden'); iconMoon.classList.add('hidden');
+          } else {
+            document.body.classList.remove('bg-gray-900','text-white');
+            document.body.classList.add('bg-gray-100','text-gray-800');
+            iconSun.classList.add('hidden'); iconMoon.classList.remove('hidden');
+          }
+        }
+        setDark(prefer === '1');
+        toggle.addEventListener('click', () => {
+          const isDark = !document.documentElement.classList.contains('dark');
+          setDark(isDark);
+          localStorage.setItem('ptnadp-dark', isDark ? '1' : '0');
+        });
+      })();
+    </script>
+  </body>
+</html>

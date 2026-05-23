@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <title>PTA-NADP School International College</title>
+    <meta name="description" content="PTA-NADP School International College - quality education and leadership." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+  <body class="bg-gray-100 text-gray-800 min-h-screen font-sans transition-colors duration-300">
+    <header class="bg-blue-900 text-white shadow sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center gap-3">
+        <div class="w-full flex justify-center">
+          <img src="14.png" alt="PTA-NADP Logo" class="h-12 w-auto" />
+        </div>
+        <h1 class="text-2xl font-bold tracking-wide">PTA-NADP International College</h1>
+        <nav>
+          <ul class="hidden md:flex gap-8 text-lg items-center">
+            <li><a href="#home" class="hover:text-yellow-300 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-yellow-300 transition">About</a></li>
+            <li><a href="#teachers" class="hover:text-yellow-300 transition">Teachers</a></li>
+            <li><a href="#students" class="hover:text-yellow-300 transition">Students</a></li>
+            <li><a href="#classes" class="hover:text-yellow-300 transition">Classes</a></li>
+            <li><a href="#gallery" class="hover:text-yellow-300 transition">Gallery</a></li>
+            <li><a href="#news" class="hover:text-yellow-300 transition">News</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition">Contact</a></li>
+            <li>
+              <button id="darkToggle" aria-label="Toggle dark mode" class="bg-white/10 hover:bg-white/20 p-2 rounded-full transition">
+                <svg id="iconSun" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l1.414-1.414M7.05 7.05L5.636 5.636"/></svg>
+                <svg id="iconMoon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="relative h-[80vh] flex items-center justify-center text-center text-white hero-bg" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('2.jpeg')">
+        <div class="px-6">
+          <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Welcome to<br/>PTA-NADP International College</h2>
+          <p class="text-lg md:text-xl max-w-3xl mx-auto mb-6">Empowering students with quality education, innovation, leadership, and global excellence.</p>
+          <a href="#about" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold shadow transition">Explore Our School</a>
+        </div>
+      </section>
+
+      <section id="about" class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop" alt="School Building" class="rounded-3xl shadow-2xl object-cover h-[350px] w-full"/>
+          <div>
+            <h3 class="text-3xl font-bold text-blue-900 mb-4">About Our School</h3>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">PTA-NADP International College is committed to nurturing future leaders through academic excellence, creativity, discipline, and innovation. We provide a modern learning environment equipped with skilled educators and advanced facilities.</p>
+            <p class="text-lg leading-relaxed text-gray-700">Our mission is to inspire every student to discover their talents, build confidence, and achieve greatness in both academics and life.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="teachers" class="py-16 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+          <h3 class="text-3xl font-bold text-blue-900 mb-3">Our Teachers</h3>
+          <p class="text-gray-600 mb-8 text-lg">Meet our experienced and passionate educators.</p>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" alt="Mrs. Clara Johnson" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Mrs. Clara Johnson</h4>
+                <p class="text-blue-700">Mathematics Teacher</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" alt="Mr. Daniel Smith" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Mr. Daniel Smith</h4>
+                <p class="text-blue-700">Physics Teacher</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop" alt="Mrs. Grace Williams" class="h-56 w-full object-cover"/>
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-1">Mrs. Grace Williams</h4>
+                <p class="text-blue-700">English Language Teacher</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="students" class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-3xl font-bold text-blue-900 mb-4">Our Students</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">Our students are encouraged to excel academically while developing leadership, teamwork, and creativity. We provide opportunities for sports, arts, technology, and community engagement.</p>
+            <div class="grid grid-cols-2 gap-6 mt-6">
+              <div class="bg-blue-100 p-6 rounded-2xl text-center shadow-md">
+                <h4 class="text-2xl font-bold text-blue-900">1,200+</h4>
+                <p class="text-gray-700 mt-2">Students</p>
+              </div>
+              <div class="bg-yellow-100 p-6 rounded-2xl text-center shadow-md">
+                <h4 class="text-2xl font-bold text-yellow-700">98%</h4>
+                <p class="text-gray-700 mt-2">Exam Success</p>
+              </div>
+            </div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Students" class="rounded-3xl shadow-2xl h-[420px] object-cover w-full"/>
+        </div>
+      </section>
+
+      <section id="classes" class="py-16 px-6 bg-gray-100">
+        <div class="max-w-6xl mx-auto text-center">
+          <h3 class="text-3xl font-bold text-blue-900 mb-3">Classes</h3>
+          <p class="text-gray-600 mb-8 text-lg">Structured academic levels designed for excellence.</p>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl shadow p-6">
+              <h4 class="text-xl font-semibold text-blue-900">Junior Secondary School 1</h4>
+              <p class="text-gray-600 mt-3">A comprehensive curriculum focused on academic growth and leadership development.</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow p-6">
+              <h4 class="text-xl font-semibold text-blue-900">Junior Secondary School 2</h4>
+              <p class="text-gray-600 mt-3">A comprehensive curriculum focused on academic growth and leadership development.</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow p-6">
+              <h4 class="text-xl font-semibold text-blue-900">Junior Secondary School 3</h4>
+              <p class="text-gray-600 mt-3">A comprehensive curriculum focused on academic growth and leadership development.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+          <h3 class="text-3xl font-bold text-blue-900 mb-3">Gallery</h3>
+          <p class="text-gray-600 mb-8 text-lg">Explore memorable moments from our school activities.</p>
+          <div class="grid sm-grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="Gallery 1" class="rounded-2xl shadow h-48 w-full object-cover"/>
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop" alt="Gallery 2" class="rounded-2xl shadow h-48 w-full object-cover"/>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Gallery 3" class="rounded-2xl shadow h-48 w-full object-cover"/>
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop" alt="Gallery 4" class="rounded-2xl shadow h-48 w-full object-cover"/>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="py-16 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+          <h3 class="text-3xl font-bold text-blue-900 mb-3">Latest News</h3>
+          <p class="text-gray-600 mb-8 text-lg">Stay updated with the latest announcements and events from our school.</p>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1427504494785-cddc0c5b12b7?q=80&w=600&auto=format&fit=crop" alt="Annual Sports Day" class="h-40 w-full object-cover"/>
+              <div class="p-6">
+                <p class="text-yellow-600 font-semibold text-sm mb-2">May 20, 2026</p>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Annual Sports Day Success</h4>
+                <p class="text-gray-600">Our students showcased exceptional athletic talents at the annual sports day. Congratulations to all winners and participants!</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" alt="Science Exhibition" class="h-40 w-full object-cover"/>
+              <div class="p-6">
+                <p class="text-yellow-600 font-semibold text-sm mb-2">May 15, 2026</p>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Science Exhibition 2026</h4>
+                <p class="text-gray-600">Students displayed innovative science projects demonstrating creativity and deep understanding of scientific principles.</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f70d504f0?q=80&w=600&auto=format&fit=crop" alt="Scholarship Awards" class="h-40 w-full object-cover"/>
+              <div class="p-6">
+                <p class="text-yellow-600 font-semibold text-sm mb-2">May 10, 2026</p>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Merit Scholarship Awards</h4>
+                <p class="text-gray-600">25 outstanding students received merit scholarships for their exceptional academic performance and leadership contributions.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16 px-6 bg-gray-100">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 class="text-3xl font-bold text-blue-900 mb-3">Contact Us</h3>
+            <p class="text-gray-700 mb-6">Reach out to PTA-NADP International College for inquiries, admissions, and more.</p>
+            <ul class="space-y-4 text-gray-700">
+              <li>Phone: <strong>+234 800 000 0000</strong></li>
+              <li>Email: <strong>info@ptnadpschool.edu</strong></li>
+              <li>Address: <strong>Lagos, Nigeria</strong></li>
+            </ul>
+          </div>
+          <form class="bg-white p-6 rounded-2xl shadow space-y-4" onsubmit="event.preventDefault(); alert('Message sent (demo)')">
+            <input type="text" placeholder="Your Name" required class="w-full p-3 rounded-xl border"/>
+            <input type="email" placeholder="Your Email" required class="w-full p-3 rounded-xl border"/>
+            <textarea placeholder="Your Message" rows="5" required class="w-full p-3 rounded-xl border"></textarea>
+            <button class="w-full bg-blue-900 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-blue-900 text-white py-8 mt-12">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h4 class="text-xl font-bold mb-2">PTA-NADP International College</h4>
+        <p class="text-gray-200 mb-2">Building future leaders through education and innovation.</p>
+        <p class="text-sm text-gray-300">© 2026 PTA-NADP International College. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Dark mode toggle (persists in localStorage)
+      (function(){
+        const toggle = document.getElementById('darkToggle');
+        const iconSun = document.getElementById('iconSun');
+        const iconMoon = document.getElementById('iconMoon');
+        const prefer = localStorage.getItem('ptnadp-dark');
+        const setDark = (d) => {
+          document.documentElement.classList.toggle('dark', d);
+          if(d){
+            document.body.classList.remove('bg-gray-100');
+            document.body.classList.add('bg-gray-900','text-white');
+            iconSun.classList.remove('hidden'); iconMoon.classList.add('hidden');
+          } else {
+            document.body.classList.remove('bg-gray-900','text-white');
+            document.body.classList.add('bg-gray-100','text-gray-800');
+            iconSun.classList.add('hidden'); iconMoon.classList.remove('hidden');
+          }
+        }
+        setDark(prefer === '1');
+        toggle.addEventListener('click', () => {
+          const isDark = !document.documentElement.classList.contains('dark');
+          setDark(isDark);
+          localStorage.setItem('ptnadp-dark', isDark ? '1' : '0');
+        });
+      })();
+    </script>
+  </body>
+</html>
