@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - PTA-NADP International College</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
@@ -96,46 +96,6 @@
       </div>
     </footer>
 
-        <script>
-      function showLoading() { document.getElementById('loadingOverlay').classList.add('show'); }
-      function toggleMobileNav() {
-        const panel = document.getElementById('mobileNavPanel');
-        if (!panel) return;
-        panel.classList.toggle('hidden');
-      }
-      window.addEventListener('pageshow', () => { document.getElementById('loadingOverlay').classList.remove('show'); });
-      (function(){
-        const toggle = document.getElementById('darkToggle');
-        const mobileToggle = document.getElementById('mobileNavToggle');
-        const panel = document.getElementById('mobileNavPanel');
-        const iconSun = document.getElementById('iconSun');
-        const iconMoon = document.getElementById('iconMoon');
-        const prefer = localStorage.getItem('ptnadp-dark');
-        const setDark = (d) => {
-          document.documentElement.classList.toggle('dark', d);
-          if(d){
-            document.body.classList.remove('bg-gray-100');
-            document.body.classList.add('bg-gray-900','text-white');
-            iconSun.classList.remove('hidden'); iconMoon.classList.add('hidden');
-          } else {
-            document.body.classList.remove('bg-gray-900','text-white');
-            document.body.classList.add('bg-gray-100','text-gray-800');
-            iconSun.classList.add('hidden'); iconMoon.classList.remove('hidden');
-          }
-        }
-        setDark(prefer === '1');
-        if(toggle) toggle.addEventListener('click', () => {
-          const isDark = !document.documentElement.classList.contains('dark');
-          setDark(isDark);
-          localStorage.setItem('ptnadp-dark', isDark ? '1' : '0');
-        });
-        if(mobileToggle) mobileToggle.addEventListener('click', toggleMobileNav);
-        document.addEventListener('click', (event) => {
-          if (panel && !panel.classList.contains('hidden') && !panel.contains(event.target) && !event.target.closest('#mobileNavToggle')) {
-            panel.classList.add('hidden');
-          }
-        });
-      })();
-    </script>
+        <script src="script.js"></script>
   </body>
 </html>

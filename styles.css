@@ -1,10 +1,11 @@
+/* Shared responsive styles for the PTA-NADP website */
 :root {
   --base-background: #F8F9FA;
   --text-base: #212529;
   --primary: #2D6A4F;
   --secondary: #FFB703;
   --tertiary: #D00000;
-  --surface: #ffffff;
+  --surface: #FFFFFF;
   --surface-muted: #E8F3ED;
   --surface-soft: #FFF5E1;
   --shadow: 0 18px 65px rgba(33, 37, 41, 0.08);
@@ -16,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -23,7 +25,6 @@ body {
   min-height: 100vh;
   background-color: var(--base-background);
   color: var(--text-base);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   position: relative;
   overflow-x: hidden;
 }
@@ -34,8 +35,8 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
+  width: min(80vw, 800px);
+  height: min(80vw, 800px);
   background-image: url('14.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -51,9 +52,10 @@ main, header, footer {
   z-index: 1;
 }
 
-img {
-  display: block;
+img, picture, svg, video {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -61,40 +63,109 @@ a {
   text-decoration: none;
 }
 
-button,
-input,
-textarea {
+button, input, textarea {
   font: inherit;
 }
 
 .site-header {
   background-color: var(--primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.site-header a,
-.site-header button {
+.site-header .header-inner {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-header .brand {
   color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
-.site-header a:hover,
-.site-header button:hover {
+.site-header .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.site-header .nav-links li {
+  list-style: none;
+}
+
+.site-header .nav-links a,
+.site-header .nav-links button {
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.site-header .nav-links a:hover,
+.site-header .nav-links button:hover {
   opacity: 0.9;
 }
 
-.nav-active {
-  font-weight: 700;
-  animation: glow-bubble 0.6s ease-in-out infinite;
+.site-header .mobile-nav-toggle {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes glow-bubble {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 183, 3, 0.4);
-    transform: scale(1);
-  }
-  50% {
-    text-shadow: 0 0 16px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 183, 3, 0.7);
-    transform: scale(1.08);
-  }
+.site-header .mobile-nav-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+#mobileNavPanel {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: calc(100% + 0.75rem);
+  width: min(94vw, 340px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  border-radius: 1.75rem;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+  padding: 1.25rem;
+  z-index: 999;
+}
+
+#mobileNavPanel.show {
+  display: block;
+}
+
+#mobileNavPanel ul {
+  display: grid;
+  gap: 0.75rem;
+}
+
+#mobileNavPanel a {
+  display: block;
+  padding: 0.9rem 1rem;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+#mobileNavPanel a:hover {
+  background: #f1f5f9;
 }
 
 .site-footer {
@@ -103,6 +174,7 @@ textarea {
 
 .section-title {
   color: var(--primary);
+  margin-bottom: 1rem;
 }
 
 .section-subtitle,
@@ -144,6 +216,15 @@ textarea {
   transform: translateY(-1px);
 }
 
+.card,
+.card-soft,
+.card-highlight,
+.card-3d-inner,
+.site-footer,
+.mobile-card {
+  width: 100%;
+}
+
 .card {
   background-color: var(--surface);
   border-radius: 1.5rem;
@@ -165,7 +246,6 @@ textarea {
 .card-3d-inner {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   transform-style: preserve-3d;
-  border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: var(--shadow);
   background-color: var(--surface);
@@ -178,13 +258,8 @@ textarea {
 
 .card-3d img {
   width: 100%;
-  height: 240px;
+  min-height: 15rem;
   object-fit: cover;
-  display: block;
-}
-
-.class-card .p-6 {
-  padding: 1.5rem;
 }
 
 .gallery-item {
@@ -203,7 +278,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.72);
   display: none;
   align-items: center;
   justify-content: center;
@@ -216,9 +291,9 @@ textarea {
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(255, 255, 255, 0.4);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.35rem solid rgba(255, 255, 255, 0.4);
   border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -244,12 +319,32 @@ textarea {
 .textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+  box-shadow: 0 0 0 0.35rem rgba(45, 106, 79, 0.15);
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    padding: 0 1.5rem;
+[class*="h-["] {
+  height: auto !important;
+}
+
+.hero-bg {
+  min-height: 60vh;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.nav-active {
+  font-weight: 700;
+  animation: glow-bubble 0.6s ease-in-out infinite;
+}
+
+@keyframes glow-bubble {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 183, 3, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 183, 3, 0.7);
+    transform: scale(1.08);
   }
 }
 
@@ -258,34 +353,22 @@ textarea {
   color: #e2e8f0;
 }
 
-.dark .card-3d .section-title {
-  color: #cbd5e1 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-}
-
-.dark .card-3d p {
-  color: #d1d5db !important;
-}
-
 .dark .site-header,
 .dark .site-footer {
   background-color: #111827;
 }
 
-.dark .bg-white {
-  background-color: #111827 !important;
-}
-
-.dark .bg-gray-100 {
-  background-color: #111827 !important;
-}
-
-.dark .bg-blue-100 {
+.dark .bg-white,
+.dark .bg-gray-100,
+.dark .bg-blue-100,
+.dark .bg-yellow-100,
+.dark .rounded-2xl,
+.dark .rounded-3xl,
+.dark .card,
+.dark .card-soft,
+.dark .card-highlight {
   background-color: #1e293b !important;
-}
-
-.dark .bg-yellow-100 {
-  background-color: #4b5563 !important;
+  border-color: #334155;
 }
 
 .dark .text-gray-600,
@@ -296,23 +379,11 @@ textarea {
 }
 
 .dark .text-gray-200,
-.dark .text-gray-300 {
-  color: #cbd5e1 !important;
-}
-
+.dark .text-gray-300,
 .dark .text-blue-900,
 .dark .text-blue-700,
 .dark .section-title {
   color: #bae6fd !important;
-}
-
-.dark .card,
-.dark .card-soft,
-.dark .card-highlight,
-.dark .rounded-2xl,
-.dark .rounded-3xl {
-  background-color: #1e293b !important;
-  border-color: #334155;
 }
 
 .dark .shadow-md,
@@ -320,17 +391,69 @@ textarea {
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.5);
 }
 
-.site-header nav {
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .site-header .max-w-7xl {
-    flex-wrap: wrap;
-    gap: 0.75rem;
+@media (max-width: 1024px) {
+  .site-header .header-inner {
+    padding: 0.85rem 1rem;
   }
 
   .hero-bg {
-    min-height: 65vh;
+    min-height: 55vh;
+  }
+
+  .site-header .nav-links {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-header .nav-links {
+    display: none !important;
+  }
+
+  .hero-bg {
+    min-height: 48vh;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .header-inner {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .site-header .brand {
+    font-size: 1.1rem;
+  }
+
+  .hero-bg {
+    min-height: 42vh;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card-3d img {
+    min-height: 12rem;
+  }
+
+  #mobileNavPanel {
+    right: 0.75rem;
+    left: 0.75rem;
+    width: calc(100% - 1.5rem) !important;
   }
 }
