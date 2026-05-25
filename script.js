@@ -21,6 +21,16 @@ function closeMobileNav() {
   panel.setAttribute('aria-hidden', 'true');
 }
 
+function openSiteMenu() {
+  const drawer = document.getElementById('siteMenuDrawer');
+  if (drawer) drawer.classList.remove('hidden');
+}
+
+function closeSiteMenu() {
+  const drawer = document.getElementById('siteMenuDrawer');
+  if (drawer) drawer.classList.add('hidden');
+}
+
 window.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('darkToggle');
   const mobileToggle = document.getElementById('mobileNavToggle');
@@ -58,6 +68,26 @@ window.addEventListener('DOMContentLoaded', function () {
       closeMobileNav();
     });
   });
+
+  const siteMenuBtn = document.getElementById('siteMenuBtn');
+  const siteMenuClose = document.getElementById('siteMenuClose');
+  const siteMenuDrawer = document.getElementById('siteMenuDrawer');
+
+  if (siteMenuBtn) {
+    siteMenuBtn.addEventListener('click', openSiteMenu);
+  }
+
+  if (siteMenuClose) {
+    siteMenuClose.addEventListener('click', closeSiteMenu);
+  }
+
+  if (siteMenuDrawer) {
+    siteMenuDrawer.addEventListener('click', function (event) {
+      if (event.target === siteMenuDrawer) {
+        closeSiteMenu();
+      }
+    });
+  }
 
   document.addEventListener('click', function (event) {
     if (!panel || panel.classList.contains('hidden')) return;

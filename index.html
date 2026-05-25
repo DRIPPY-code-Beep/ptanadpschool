@@ -12,7 +12,10 @@
     <div id="loadingOverlay"><div class="spinner"></div></div>
     <header class="site-header text-white shadow sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center gap-4">
-        <h1 class="text-2xl font-bold tracking-wide">PTA-NADP International College</h1>
+        <div class="flex items-center gap-3">
+          <img src="14.png" alt="PTA-NADP Logo" class="h-10 w-auto">
+          <h1 class="text-2xl font-bold tracking-wide">PTA-NADP International College</h1>
+        </div>
         <nav class="relative">
             <button id="mobileNavToggle" aria-label="Open navigation" class="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2 text-white transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -54,9 +57,35 @@
         <div class="px-6">
           <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Welcome to<br/>PTA-NADP International College</h2>
           <p class="text-lg md:text-xl max-w-3xl mx-auto mb-6">Empowering students with quality education, innovation, leadership, and global excellence.</p>
-          <a href="about.html" onclick="showLoading()" class="btn-secondary inline-block px-6 py-3 rounded-full font-semibold shadow transition hover:opacity-90">Explore Our School</a>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="about.html" onclick="showLoading()" class="btn-secondary inline-block px-6 py-3 rounded-full font-semibold shadow transition hover:opacity-90">Explore Our School</a>
+            <button id="siteMenuBtn" aria-label="Open site menu" class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold shadow transition hover:opacity-90">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              Menu
+            </button>
+          </div>
         </div>
       </section>
+      <div id="siteMenuDrawer" class="site-menu-drawer hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-sm mx-4 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-6 animate-in">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Menu</h3>
+            <button id="siteMenuClose" class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <nav class="space-y-2">
+            <a href="index.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Home</a>
+            <a href="about.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">About</a>
+            <a href="teachers.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Teachers</a>
+            <a href="students.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Students</a>
+            <a href="classes.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Classes</a>
+            <a href="gallery.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Gallery</a>
+            <a href="news.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">News</a>
+            <a href="contact.html" onclick="showLoading(); closeSiteMenu();" class="block px-4 py-3 rounded-xl text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Contact</a>
+          </nav>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer text-white py-8 mt-12">
